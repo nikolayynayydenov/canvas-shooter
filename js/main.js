@@ -94,7 +94,9 @@ function shootRight(player, opponent, ball) {
             centerY >= opponent.y && centerY <= opponent.y + opponent.height) {
             // if a target is reached
             clearInterval(moveBallInterval);
-            alert('player 1 wins!');
+            ctx.font = "40 Arial";
+            ctx.fillText("Player 1 wins",30,50);
+            setTimeout(location.reload.bind(location), 2000)
         }
         else if(centerX + ball.radius > canvas.width) {
             console.log('end reached');
@@ -130,7 +132,9 @@ function shootLeft(player, opponent, ball) {
             centerY >= opponent.y && centerY <= opponent.y + opponent.height) {
             // if a target is reached
             clearInterval(moveBallInterval);
-            alert('player 2 wins!');
+            ctx.font = "40px Arial";
+            ctx.fillText("Player 2 wins",30,50);
+            setTimeout(location.reload.bind(location), 2000)
         }
         else if(centerX + ball.radius < 0) {
             console.log('end reached');
@@ -173,3 +177,4 @@ function drawImage(player) {
         ctx.drawImage(baseImage, player.x, player.y, player.width, player.height);
     }
 }
+
